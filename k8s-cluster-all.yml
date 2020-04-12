@@ -1,0 +1,65 @@
+- hosts: all[0]
+  become: yes
+  tasks:
+   - name: install kubectl
+     apt:
+       name: kubectl=1.14.0-00
+       state: present
+       force: yes
+
+#- hosts: all[0]
+#  become: yes
+#  tasks:
+#    - name: Copy file with owner and permissions
+#      copy:
+#        src: kube-config-cluster0.yml
+#        dest: /tmp/kube-config.yml
+#        owner: root
+#        group: root
+#        mode: '0644'
+#    - name: initialize the cluster
+#      shell: kubeadm init --config /tmp/kube-config.yml
+
+- hosts: all[0]
+  become: yes
+  tasks:
+    - name: initialize the cluster
+      shell: kubeadm init --pod-network-cidr=10.244.0.0/16
+
+    - name: create .kube directory
+      become: yes
+      become_user: mulugeta
+      file:
+        path: $HOME/.kube
+        state: directory
+        mode: 0755
+
+    - name: copy admin.conf to user's kube config
+      copy:
+        src: /etc/kubernetes/admin.conf
+        dest: /home/mulugeta/.kube/config
+        remote_src: yes
+        owner: mulugeta
+
+    - name: install Pod network
+      become: yes
+      become_user: mulugeta
+      shell: kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/2140ac876ef134e0ed5af15c65e414cf26827915/Documentation/kube-flannel.yml
+
+- hosts: all[0]
+  become: yes
+  gather_facts: false
+  tasks:
+    - name: get join command
+      shell: kubeadm token create --print-join-command
+      register: join_command_raw
+
+    - name: set join command
+      set_fact:
+        join_command: "{{ join_command_raw.stdout_lines[0] }}"
+
+- hosts: all[1:]
+  become: yes
+  tasks:
+    - name: join cluster
+      shell: "{{ hostvars[groups['all'][0]].join_command }}"
