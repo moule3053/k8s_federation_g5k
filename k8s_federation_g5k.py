@@ -6,7 +6,7 @@ from enoslib.infra.enos_vmong5k.configuration import Configuration
 import logging
 import time
 
-name = "g5k-federation-1"
+name = "kubefed-"
 
 clusters = ["parapluie", "parapluie","econome", "chiclet", "dahu", "petitprince"]
 
@@ -19,7 +19,7 @@ duration = "08:00:00"
 
 for i in range(0, len(clusters)):
 
-    name_job = name + clusters[i]
+    name_job = name + clusters[i] + str(i)
 
     role_name = "cluster" + str(clusters[i])
     

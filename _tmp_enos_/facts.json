@@ -3,10 +3,12 @@
   {
     "ansible_all_ipv4_addresses": [
       "10.158.4.2",
+      "10.244.0.0",
       "172.17.0.1"
     ],
     "ansible_all_ipv6_addresses": [
-      "fe80::216:3eff:fe9e:402"
+      "fe80::216:3eff:fe9e:402",
+      "fe80::7885:d9ff:fece:81ac"
     ],
     "ansible_apparmor": {
       "status": "disabled"
@@ -25,16 +27,16 @@
     "ansible_date_time": {
       "date": "2020-04-13",
       "day": "13",
-      "epoch": "1586766286",
+      "epoch": "1586766463",
       "hour": "10",
-      "iso8601": "2020-04-13T08:24:46Z",
-      "iso8601_basic": "20200413T102446339512",
-      "iso8601_basic_short": "20200413T102446",
-      "iso8601_micro": "2020-04-13T08:24:46.339685Z",
-      "minute": "24",
+      "iso8601": "2020-04-13T08:27:43Z",
+      "iso8601_basic": "20200413T102743772485",
+      "iso8601_basic_short": "20200413T102743",
+      "iso8601_micro": "2020-04-13T08:27:43.772654Z",
+      "minute": "27",
       "month": "04",
-      "second": "46",
-      "time": "10:24:46",
+      "second": "43",
+      "time": "10:27:43",
       "tz": "CEST",
       "tz_offset": "+0200",
       "weekday": "Monday",
@@ -389,10 +391,12 @@
       "_facts_gathered": true,
       "all_ipv4_addresses": [
         "10.158.4.2",
+        "10.244.0.0",
         "172.17.0.1"
       ],
       "all_ipv6_addresses": [
-        "fe80::216:3eff:fe9e:402"
+        "fe80::216:3eff:fe9e:402",
+        "fe80::7885:d9ff:fece:81ac"
       ],
       "ansible_local": {},
       "apparmor": {
@@ -411,16 +415,16 @@
       "date_time": {
         "date": "2020-04-13",
         "day": "13",
-        "epoch": "1586766286",
+        "epoch": "1586766463",
         "hour": "10",
-        "iso8601": "2020-04-13T08:24:46Z",
-        "iso8601_basic": "20200413T102446339512",
-        "iso8601_basic_short": "20200413T102446",
-        "iso8601_micro": "2020-04-13T08:24:46.339685Z",
-        "minute": "24",
+        "iso8601": "2020-04-13T08:27:43Z",
+        "iso8601_basic": "20200413T102743772485",
+        "iso8601_basic_short": "20200413T102743",
+        "iso8601_micro": "2020-04-13T08:27:43.772654Z",
+        "minute": "27",
         "month": "04",
-        "second": "46",
-        "time": "10:24:46",
+        "second": "43",
+        "time": "10:27:43",
         "tz": "CEST",
         "tz_offset": "+0200",
         "weekday": "Monday",
@@ -774,6 +778,83 @@
       },
       "fibre_channel_wwn": [],
       "fips": false,
+      "flannel.1": {
+        "active": true,
+        "device": "flannel.1",
+        "features": {
+          "busy_poll": "off [fixed]",
+          "fcoe_mtu": "off [fixed]",
+          "generic_receive_offload": "on",
+          "generic_segmentation_offload": "on",
+          "highdma": "off [fixed]",
+          "hw_tc_offload": "off [fixed]",
+          "l2_fwd_offload": "off [fixed]",
+          "large_receive_offload": "off [fixed]",
+          "loopback": "off [fixed]",
+          "netns_local": "off [fixed]",
+          "ntuple_filters": "off [fixed]",
+          "receive_hashing": "off [fixed]",
+          "rx_all": "off [fixed]",
+          "rx_checksumming": "on",
+          "rx_fcs": "off [fixed]",
+          "rx_vlan_filter": "off [fixed]",
+          "rx_vlan_offload": "off [fixed]",
+          "rx_vlan_stag_filter": "off [fixed]",
+          "rx_vlan_stag_hw_parse": "off [fixed]",
+          "scatter_gather": "on",
+          "tcp_segmentation_offload": "on",
+          "tx_checksum_fcoe_crc": "off [fixed]",
+          "tx_checksum_ip_generic": "on",
+          "tx_checksum_ipv4": "off [fixed]",
+          "tx_checksum_ipv6": "off [fixed]",
+          "tx_checksum_sctp": "off [fixed]",
+          "tx_checksumming": "on",
+          "tx_fcoe_segmentation": "off [fixed]",
+          "tx_gre_csum_segmentation": "off [fixed]",
+          "tx_gre_segmentation": "off [fixed]",
+          "tx_gso_partial": "off [fixed]",
+          "tx_gso_robust": "off [fixed]",
+          "tx_ipxip4_segmentation": "off [fixed]",
+          "tx_ipxip6_segmentation": "off [fixed]",
+          "tx_lockless": "on [fixed]",
+          "tx_nocache_copy": "off",
+          "tx_scatter_gather": "on",
+          "tx_scatter_gather_fraglist": "off [fixed]",
+          "tx_sctp_segmentation": "on",
+          "tx_tcp6_segmentation": "on",
+          "tx_tcp_ecn_segmentation": "on",
+          "tx_tcp_mangleid_segmentation": "on",
+          "tx_tcp_segmentation": "on",
+          "tx_udp_tnl_csum_segmentation": "off [fixed]",
+          "tx_udp_tnl_segmentation": "off [fixed]",
+          "tx_vlan_offload": "on",
+          "tx_vlan_stag_hw_insert": "on",
+          "udp_fragmentation_offload": "on",
+          "vlan_challenged": "off [fixed]"
+        },
+        "hw_timestamp_filters": [],
+        "ipv4": {
+          "address": "10.244.0.0",
+          "broadcast": "global",
+          "netmask": "255.255.255.255",
+          "network": "10.244.0.0"
+        },
+        "ipv6": [
+          {
+            "address": "fe80::7885:d9ff:fece:81ac",
+            "prefix": "64",
+            "scope": "link"
+          }
+        ],
+        "macaddress": "7a:85:d9:ce:81:ac",
+        "mtu": 1450,
+        "promisc": false,
+        "timestamping": [
+          "rx_software",
+          "software"
+        ],
+        "type": "ether"
+      },
       "form_factor": "Other",
       "fqdn": "virtual-158-4-2.grid5000.fr",
       "gather_subset": [
@@ -783,6 +864,7 @@
       "hostnqn": "",
       "interfaces": [
         "lo",
+        "flannel.1",
         "docker0",
         "ens3"
       ],
@@ -875,16 +957,16 @@
       },
       "machine": "x86_64",
       "machine_id": "fb4442d4d9b840a4882eb61faac83db9",
-      "memfree_mb": 15435,
+      "memfree_mb": 14012,
       "memory_mb": {
         "nocache": {
-          "free": 15875,
-          "used": 176
+          "free": 15393,
+          "used": 658
         },
         "real": {
-          "free": 15435,
+          "free": 14012,
           "total": 16051,
-          "used": 616
+          "used": 2039
         },
         "swap": {
           "cached": 0,
@@ -897,18 +979,18 @@
       "module_setup": true,
       "mounts": [
         {
-          "block_available": 1670560,
+          "block_available": 1448765,
           "block_size": 4096,
           "block_total": 2370385,
-          "block_used": 699825,
+          "block_used": 921620,
           "device": "/dev/vda1",
           "fstype": "ext4",
-          "inode_available": 542677,
+          "inode_available": 535160,
           "inode_total": 606208,
-          "inode_used": 63531,
+          "inode_used": 71048,
           "mount": "/",
           "options": "rw,relatime,errors=remount-ro,data=ordered",
-          "size_available": 6842613760,
+          "size_available": 5934141440,
           "size_total": 9709096960,
           "uuid": "2dce42b7-1606-4d91-b6eb-5c83d4df1dd7"
         }
@@ -1024,7 +1106,7 @@
       ],
       "system_capabilities_enforced": "True",
       "system_vendor": "QEMU",
-      "uptime_seconds": 279,
+      "uptime_seconds": 457,
       "user_dir": "/root",
       "user_gecos": "root",
       "user_gid": 0,
@@ -1038,6 +1120,83 @@
     },
     "ansible_fibre_channel_wwn": [],
     "ansible_fips": false,
+    "ansible_flannel.1": {
+      "active": true,
+      "device": "flannel.1",
+      "features": {
+        "busy_poll": "off [fixed]",
+        "fcoe_mtu": "off [fixed]",
+        "generic_receive_offload": "on",
+        "generic_segmentation_offload": "on",
+        "highdma": "off [fixed]",
+        "hw_tc_offload": "off [fixed]",
+        "l2_fwd_offload": "off [fixed]",
+        "large_receive_offload": "off [fixed]",
+        "loopback": "off [fixed]",
+        "netns_local": "off [fixed]",
+        "ntuple_filters": "off [fixed]",
+        "receive_hashing": "off [fixed]",
+        "rx_all": "off [fixed]",
+        "rx_checksumming": "on",
+        "rx_fcs": "off [fixed]",
+        "rx_vlan_filter": "off [fixed]",
+        "rx_vlan_offload": "off [fixed]",
+        "rx_vlan_stag_filter": "off [fixed]",
+        "rx_vlan_stag_hw_parse": "off [fixed]",
+        "scatter_gather": "on",
+        "tcp_segmentation_offload": "on",
+        "tx_checksum_fcoe_crc": "off [fixed]",
+        "tx_checksum_ip_generic": "on",
+        "tx_checksum_ipv4": "off [fixed]",
+        "tx_checksum_ipv6": "off [fixed]",
+        "tx_checksum_sctp": "off [fixed]",
+        "tx_checksumming": "on",
+        "tx_fcoe_segmentation": "off [fixed]",
+        "tx_gre_csum_segmentation": "off [fixed]",
+        "tx_gre_segmentation": "off [fixed]",
+        "tx_gso_partial": "off [fixed]",
+        "tx_gso_robust": "off [fixed]",
+        "tx_ipxip4_segmentation": "off [fixed]",
+        "tx_ipxip6_segmentation": "off [fixed]",
+        "tx_lockless": "on [fixed]",
+        "tx_nocache_copy": "off",
+        "tx_scatter_gather": "on",
+        "tx_scatter_gather_fraglist": "off [fixed]",
+        "tx_sctp_segmentation": "on",
+        "tx_tcp6_segmentation": "on",
+        "tx_tcp_ecn_segmentation": "on",
+        "tx_tcp_mangleid_segmentation": "on",
+        "tx_tcp_segmentation": "on",
+        "tx_udp_tnl_csum_segmentation": "off [fixed]",
+        "tx_udp_tnl_segmentation": "off [fixed]",
+        "tx_vlan_offload": "on",
+        "tx_vlan_stag_hw_insert": "on",
+        "udp_fragmentation_offload": "on",
+        "vlan_challenged": "off [fixed]"
+      },
+      "hw_timestamp_filters": [],
+      "ipv4": {
+        "address": "10.244.0.0",
+        "broadcast": "global",
+        "netmask": "255.255.255.255",
+        "network": "10.244.0.0"
+      },
+      "ipv6": [
+        {
+          "address": "fe80::7885:d9ff:fece:81ac",
+          "prefix": "64",
+          "scope": "link"
+        }
+      ],
+      "macaddress": "7a:85:d9:ce:81:ac",
+      "mtu": 1450,
+      "promisc": false,
+      "timestamping": [
+        "rx_software",
+        "software"
+      ],
+      "type": "ether"
+    },
     "ansible_forks": 100,
     "ansible_form_factor": "Other",
     "ansible_fqdn": "virtual-158-4-2.grid5000.fr",
@@ -1045,6 +1204,7 @@
     "ansible_hostnqn": "",
     "ansible_interfaces": [
       "lo",
+      "flannel.1",
       "docker0",
       "ens3"
     ],
@@ -1138,16 +1298,16 @@
     },
     "ansible_machine": "x86_64",
     "ansible_machine_id": "fb4442d4d9b840a4882eb61faac83db9",
-    "ansible_memfree_mb": 15435,
+    "ansible_memfree_mb": 14012,
     "ansible_memory_mb": {
       "nocache": {
-        "free": 15875,
-        "used": 176
+        "free": 15393,
+        "used": 658
       },
       "real": {
-        "free": 15435,
+        "free": 14012,
         "total": 16051,
-        "used": 616
+        "used": 2039
       },
       "swap": {
         "cached": 0,
@@ -1159,18 +1319,18 @@
     "ansible_memtotal_mb": 16051,
     "ansible_mounts": [
       {
-        "block_available": 1670560,
+        "block_available": 1448765,
         "block_size": 4096,
         "block_total": 2370385,
-        "block_used": 699825,
+        "block_used": 921620,
         "device": "/dev/vda1",
         "fstype": "ext4",
-        "inode_available": 542677,
+        "inode_available": 535160,
         "inode_total": 606208,
-        "inode_used": 63531,
+        "inode_used": 71048,
         "mount": "/",
         "options": "rw,relatime,errors=remount-ro,data=ordered",
-        "size_available": 6842613760,
+        "size_available": 5934141440,
         "size_total": 9709096960,
         "uuid": "2dce42b7-1606-4d91-b6eb-5c83d4df1dd7"
       }
@@ -1290,7 +1450,7 @@
     ],
     "ansible_system_capabilities_enforced": "True",
     "ansible_system_vendor": "QEMU",
-    "ansible_uptime_seconds": 279,
+    "ansible_uptime_seconds": 457,
     "ansible_user_dir": "/root",
     "ansible_user_gecos": "root",
     "ansible_user_gid": 0,
@@ -1311,11 +1471,11 @@
       "all"
     ],
     "group_names": [
-      "253cfbcda2f340668a316791bcd1d5c1",
+      "2af6a8d684894c3fb3d27ee3b3140afe",
       "clusterparapluie"
     ],
     "groups": {
-      "253cfbcda2f340668a316791bcd1d5c1": [
+      "2af6a8d684894c3fb3d27ee3b3140afe": [
         "virtual-158-4-2",
         "virtual-158-4-3",
         "virtual-158-4-4",
@@ -1346,7 +1506,7 @@
     "inventory_hostname": "virtual-158-4-2",
     "inventory_hostname_short": "virtual-158-4-2",
     "module_setup": true,
-    "omit": "__omit_place_holder__f86de38cdd5a8f119199365072680fc540529062",
+    "omit": "__omit_place_holder__2d54419b2b8458ac206285f2c65761455004e940",
     "playbook_dir": "/root/venv/lib/python3.8/site-packages/enoslib/ansible"
   }
 ,"virtual-158-4-3": 
@@ -1375,16 +1535,16 @@
     "ansible_date_time": {
       "date": "2020-04-13",
       "day": "13",
-      "epoch": "1586766286",
+      "epoch": "1586766463",
       "hour": "10",
-      "iso8601": "2020-04-13T08:24:46Z",
-      "iso8601_basic": "20200413T102446482033",
-      "iso8601_basic_short": "20200413T102446",
-      "iso8601_micro": "2020-04-13T08:24:46.482225Z",
-      "minute": "24",
+      "iso8601": "2020-04-13T08:27:43Z",
+      "iso8601_basic": "20200413T102743726443",
+      "iso8601_basic_short": "20200413T102743",
+      "iso8601_micro": "2020-04-13T08:27:43.726627Z",
+      "minute": "27",
       "month": "04",
-      "second": "46",
-      "time": "10:24:46",
+      "second": "43",
+      "time": "10:27:43",
       "tz": "CEST",
       "tz_offset": "+0200",
       "weekday": "Monday",
@@ -1726,13 +1886,13 @@
       "PWD": "/root",
       "SHELL": "/bin/bash",
       "SHLVL": "1",
-      "SSH_CLIENT": "10.158.0.2 43128 22",
-      "SSH_CONNECTION": "10.158.0.2 43128 10.158.4.3 22",
+      "SSH_CLIENT": "10.158.0.2 43140 22",
+      "SSH_CONNECTION": "10.158.0.2 43140 10.158.4.3 22",
       "SSH_TTY": "/dev/pts/0",
       "TERM": "xterm-256color",
       "USER": "root",
       "XDG_RUNTIME_DIR": "/run/user/0",
-      "XDG_SESSION_ID": "3",
+      "XDG_SESSION_ID": "5",
       "_": "/bin/sh"
     },
     "ansible_facts": {
@@ -1761,16 +1921,16 @@
       "date_time": {
         "date": "2020-04-13",
         "day": "13",
-        "epoch": "1586766286",
+        "epoch": "1586766463",
         "hour": "10",
-        "iso8601": "2020-04-13T08:24:46Z",
-        "iso8601_basic": "20200413T102446482033",
-        "iso8601_basic_short": "20200413T102446",
-        "iso8601_micro": "2020-04-13T08:24:46.482225Z",
-        "minute": "24",
+        "iso8601": "2020-04-13T08:27:43Z",
+        "iso8601_basic": "20200413T102743726443",
+        "iso8601_basic_short": "20200413T102743",
+        "iso8601_micro": "2020-04-13T08:27:43.726627Z",
+        "minute": "27",
         "month": "04",
-        "second": "46",
-        "time": "10:24:46",
+        "second": "43",
+        "time": "10:27:43",
         "tz": "CEST",
         "tz_offset": "+0200",
         "weekday": "Monday",
@@ -2113,13 +2273,13 @@
         "PWD": "/root",
         "SHELL": "/bin/bash",
         "SHLVL": "1",
-        "SSH_CLIENT": "10.158.0.2 43128 22",
-        "SSH_CONNECTION": "10.158.0.2 43128 10.158.4.3 22",
+        "SSH_CLIENT": "10.158.0.2 43140 22",
+        "SSH_CONNECTION": "10.158.0.2 43140 10.158.4.3 22",
         "SSH_TTY": "/dev/pts/0",
         "TERM": "xterm-256color",
         "USER": "root",
         "XDG_RUNTIME_DIR": "/run/user/0",
-        "XDG_SESSION_ID": "3",
+        "XDG_SESSION_ID": "5",
         "_": "/bin/sh"
       },
       "fibre_channel_wwn": [],
@@ -2225,16 +2385,16 @@
       },
       "machine": "x86_64",
       "machine_id": "fb4442d4d9b840a4882eb61faac83db9",
-      "memfree_mb": 15435,
+      "memfree_mb": 15157,
       "memory_mb": {
         "nocache": {
-          "free": 15875,
-          "used": 176
+          "free": 15817,
+          "used": 234
         },
         "real": {
-          "free": 15435,
+          "free": 15157,
           "total": 16051,
-          "used": 616
+          "used": 894
         },
         "swap": {
           "cached": 0,
@@ -2247,18 +2407,18 @@
       "module_setup": true,
       "mounts": [
         {
-          "block_available": 1670560,
+          "block_available": 1654616,
           "block_size": 4096,
           "block_total": 2370385,
-          "block_used": 699825,
+          "block_used": 715769,
           "device": "/dev/vda1",
           "fstype": "ext4",
-          "inode_available": 542677,
+          "inode_available": 540033,
           "inode_total": 606208,
-          "inode_used": 63531,
+          "inode_used": 66175,
           "mount": "/",
           "options": "rw,relatime,errors=remount-ro,data=ordered",
-          "size_available": 6842613760,
+          "size_available": 6777307136,
           "size_total": 9709096960,
           "uuid": "2dce42b7-1606-4d91-b6eb-5c83d4df1dd7"
         }
@@ -2374,7 +2534,7 @@
       ],
       "system_capabilities_enforced": "True",
       "system_vendor": "QEMU",
-      "uptime_seconds": 276,
+      "uptime_seconds": 453,
       "user_dir": "/root",
       "user_gecos": "root",
       "user_gid": 0,
@@ -2488,16 +2648,16 @@
     },
     "ansible_machine": "x86_64",
     "ansible_machine_id": "fb4442d4d9b840a4882eb61faac83db9",
-    "ansible_memfree_mb": 15435,
+    "ansible_memfree_mb": 15157,
     "ansible_memory_mb": {
       "nocache": {
-        "free": 15875,
-        "used": 176
+        "free": 15817,
+        "used": 234
       },
       "real": {
-        "free": 15435,
+        "free": 15157,
         "total": 16051,
-        "used": 616
+        "used": 894
       },
       "swap": {
         "cached": 0,
@@ -2509,18 +2669,18 @@
     "ansible_memtotal_mb": 16051,
     "ansible_mounts": [
       {
-        "block_available": 1670560,
+        "block_available": 1654616,
         "block_size": 4096,
         "block_total": 2370385,
-        "block_used": 699825,
+        "block_used": 715769,
         "device": "/dev/vda1",
         "fstype": "ext4",
-        "inode_available": 542677,
+        "inode_available": 540033,
         "inode_total": 606208,
-        "inode_used": 63531,
+        "inode_used": 66175,
         "mount": "/",
         "options": "rw,relatime,errors=remount-ro,data=ordered",
-        "size_available": 6842613760,
+        "size_available": 6777307136,
         "size_total": 9709096960,
         "uuid": "2dce42b7-1606-4d91-b6eb-5c83d4df1dd7"
       }
@@ -2640,7 +2800,7 @@
     ],
     "ansible_system_capabilities_enforced": "True",
     "ansible_system_vendor": "QEMU",
-    "ansible_uptime_seconds": 276,
+    "ansible_uptime_seconds": 453,
     "ansible_user_dir": "/root",
     "ansible_user_gecos": "root",
     "ansible_user_gid": 0,
@@ -2661,11 +2821,11 @@
       "all"
     ],
     "group_names": [
-      "253cfbcda2f340668a316791bcd1d5c1",
+      "2af6a8d684894c3fb3d27ee3b3140afe",
       "clusterparapluie"
     ],
     "groups": {
-      "253cfbcda2f340668a316791bcd1d5c1": [
+      "2af6a8d684894c3fb3d27ee3b3140afe": [
         "virtual-158-4-2",
         "virtual-158-4-3",
         "virtual-158-4-4",
@@ -2696,7 +2856,7 @@
     "inventory_hostname": "virtual-158-4-3",
     "inventory_hostname_short": "virtual-158-4-3",
     "module_setup": true,
-    "omit": "__omit_place_holder__f86de38cdd5a8f119199365072680fc540529062",
+    "omit": "__omit_place_holder__2d54419b2b8458ac206285f2c65761455004e940",
     "playbook_dir": "/root/venv/lib/python3.8/site-packages/enoslib/ansible"
   }
 ,"virtual-158-4-4": 
@@ -2725,16 +2885,16 @@
     "ansible_date_time": {
       "date": "2020-04-13",
       "day": "13",
-      "epoch": "1586766286",
+      "epoch": "1586766463",
       "hour": "10",
-      "iso8601": "2020-04-13T08:24:46Z",
-      "iso8601_basic": "20200413T102446378605",
-      "iso8601_basic_short": "20200413T102446",
-      "iso8601_micro": "2020-04-13T08:24:46.378785Z",
-      "minute": "24",
+      "iso8601": "2020-04-13T08:27:43Z",
+      "iso8601_basic": "20200413T102743810714",
+      "iso8601_basic_short": "20200413T102743",
+      "iso8601_micro": "2020-04-13T08:27:43.811006Z",
+      "minute": "27",
       "month": "04",
-      "second": "46",
-      "time": "10:24:46",
+      "second": "43",
+      "time": "10:27:43",
       "tz": "CEST",
       "tz_offset": "+0200",
       "weekday": "Monday",
@@ -3076,13 +3236,13 @@
       "PWD": "/root",
       "SHELL": "/bin/bash",
       "SHLVL": "1",
-      "SSH_CLIENT": "10.158.0.2 52188 22",
-      "SSH_CONNECTION": "10.158.0.2 52188 10.158.4.4 22",
+      "SSH_CLIENT": "10.158.0.2 52200 22",
+      "SSH_CONNECTION": "10.158.0.2 52200 10.158.4.4 22",
       "SSH_TTY": "/dev/pts/0",
       "TERM": "xterm-256color",
       "USER": "root",
       "XDG_RUNTIME_DIR": "/run/user/0",
-      "XDG_SESSION_ID": "3",
+      "XDG_SESSION_ID": "5",
       "_": "/bin/sh"
     },
     "ansible_facts": {
@@ -3111,16 +3271,16 @@
       "date_time": {
         "date": "2020-04-13",
         "day": "13",
-        "epoch": "1586766286",
+        "epoch": "1586766463",
         "hour": "10",
-        "iso8601": "2020-04-13T08:24:46Z",
-        "iso8601_basic": "20200413T102446378605",
-        "iso8601_basic_short": "20200413T102446",
-        "iso8601_micro": "2020-04-13T08:24:46.378785Z",
-        "minute": "24",
+        "iso8601": "2020-04-13T08:27:43Z",
+        "iso8601_basic": "20200413T102743810714",
+        "iso8601_basic_short": "20200413T102743",
+        "iso8601_micro": "2020-04-13T08:27:43.811006Z",
+        "minute": "27",
         "month": "04",
-        "second": "46",
-        "time": "10:24:46",
+        "second": "43",
+        "time": "10:27:43",
         "tz": "CEST",
         "tz_offset": "+0200",
         "weekday": "Monday",
@@ -3463,13 +3623,13 @@
         "PWD": "/root",
         "SHELL": "/bin/bash",
         "SHLVL": "1",
-        "SSH_CLIENT": "10.158.0.2 52188 22",
-        "SSH_CONNECTION": "10.158.0.2 52188 10.158.4.4 22",
+        "SSH_CLIENT": "10.158.0.2 52200 22",
+        "SSH_CONNECTION": "10.158.0.2 52200 10.158.4.4 22",
         "SSH_TTY": "/dev/pts/0",
         "TERM": "xterm-256color",
         "USER": "root",
         "XDG_RUNTIME_DIR": "/run/user/0",
-        "XDG_SESSION_ID": "3",
+        "XDG_SESSION_ID": "5",
         "_": "/bin/sh"
       },
       "fibre_channel_wwn": [],
@@ -3575,16 +3735,16 @@
       },
       "machine": "x86_64",
       "machine_id": "fb4442d4d9b840a4882eb61faac83db9",
-      "memfree_mb": 15436,
+      "memfree_mb": 15162,
       "memory_mb": {
         "nocache": {
-          "free": 15876,
-          "used": 175
+          "free": 15817,
+          "used": 234
         },
         "real": {
-          "free": 15436,
+          "free": 15162,
           "total": 16051,
-          "used": 615
+          "used": 889
         },
         "swap": {
           "cached": 0,
@@ -3597,18 +3757,18 @@
       "module_setup": true,
       "mounts": [
         {
-          "block_available": 1670561,
+          "block_available": 1655455,
           "block_size": 4096,
           "block_total": 2370385,
-          "block_used": 699824,
+          "block_used": 714930,
           "device": "/dev/vda1",
           "fstype": "ext4",
-          "inode_available": 542677,
+          "inode_available": 540449,
           "inode_total": 606208,
-          "inode_used": 63531,
+          "inode_used": 65759,
           "mount": "/",
           "options": "rw,relatime,errors=remount-ro,data=ordered",
-          "size_available": 6842617856,
+          "size_available": 6780743680,
           "size_total": 9709096960,
           "uuid": "2dce42b7-1606-4d91-b6eb-5c83d4df1dd7"
         }
@@ -3724,7 +3884,7 @@
       ],
       "system_capabilities_enforced": "True",
       "system_vendor": "QEMU",
-      "uptime_seconds": 273,
+      "uptime_seconds": 450,
       "user_dir": "/root",
       "user_gecos": "root",
       "user_gid": 0,
@@ -3838,16 +3998,16 @@
     },
     "ansible_machine": "x86_64",
     "ansible_machine_id": "fb4442d4d9b840a4882eb61faac83db9",
-    "ansible_memfree_mb": 15436,
+    "ansible_memfree_mb": 15162,
     "ansible_memory_mb": {
       "nocache": {
-        "free": 15876,
-        "used": 175
+        "free": 15817,
+        "used": 234
       },
       "real": {
-        "free": 15436,
+        "free": 15162,
         "total": 16051,
-        "used": 615
+        "used": 889
       },
       "swap": {
         "cached": 0,
@@ -3859,18 +4019,18 @@
     "ansible_memtotal_mb": 16051,
     "ansible_mounts": [
       {
-        "block_available": 1670561,
+        "block_available": 1655455,
         "block_size": 4096,
         "block_total": 2370385,
-        "block_used": 699824,
+        "block_used": 714930,
         "device": "/dev/vda1",
         "fstype": "ext4",
-        "inode_available": 542677,
+        "inode_available": 540449,
         "inode_total": 606208,
-        "inode_used": 63531,
+        "inode_used": 65759,
         "mount": "/",
         "options": "rw,relatime,errors=remount-ro,data=ordered",
-        "size_available": 6842617856,
+        "size_available": 6780743680,
         "size_total": 9709096960,
         "uuid": "2dce42b7-1606-4d91-b6eb-5c83d4df1dd7"
       }
@@ -3990,7 +4150,7 @@
     ],
     "ansible_system_capabilities_enforced": "True",
     "ansible_system_vendor": "QEMU",
-    "ansible_uptime_seconds": 273,
+    "ansible_uptime_seconds": 450,
     "ansible_user_dir": "/root",
     "ansible_user_gecos": "root",
     "ansible_user_gid": 0,
@@ -4011,11 +4171,11 @@
       "all"
     ],
     "group_names": [
-      "253cfbcda2f340668a316791bcd1d5c1",
+      "2af6a8d684894c3fb3d27ee3b3140afe",
       "clusterparapluie"
     ],
     "groups": {
-      "253cfbcda2f340668a316791bcd1d5c1": [
+      "2af6a8d684894c3fb3d27ee3b3140afe": [
         "virtual-158-4-2",
         "virtual-158-4-3",
         "virtual-158-4-4",
@@ -4046,7 +4206,7 @@
     "inventory_hostname": "virtual-158-4-4",
     "inventory_hostname_short": "virtual-158-4-4",
     "module_setup": true,
-    "omit": "__omit_place_holder__f86de38cdd5a8f119199365072680fc540529062",
+    "omit": "__omit_place_holder__2d54419b2b8458ac206285f2c65761455004e940",
     "playbook_dir": "/root/venv/lib/python3.8/site-packages/enoslib/ansible"
   }
 ,"virtual-158-4-5": 
@@ -4075,16 +4235,16 @@
     "ansible_date_time": {
       "date": "2020-04-13",
       "day": "13",
-      "epoch": "1586766286",
+      "epoch": "1586766463",
       "hour": "10",
-      "iso8601": "2020-04-13T08:24:46Z",
-      "iso8601_basic": "20200413T102446458355",
-      "iso8601_basic_short": "20200413T102446",
-      "iso8601_micro": "2020-04-13T08:24:46.458543Z",
-      "minute": "24",
+      "iso8601": "2020-04-13T08:27:43Z",
+      "iso8601_basic": "20200413T102743784528",
+      "iso8601_basic_short": "20200413T102743",
+      "iso8601_micro": "2020-04-13T08:27:43.784706Z",
+      "minute": "27",
       "month": "04",
-      "second": "46",
-      "time": "10:24:46",
+      "second": "43",
+      "time": "10:27:43",
       "tz": "CEST",
       "tz_offset": "+0200",
       "weekday": "Monday",
@@ -4426,13 +4586,13 @@
       "PWD": "/root",
       "SHELL": "/bin/bash",
       "SHLVL": "1",
-      "SSH_CLIENT": "10.158.0.2 60304 22",
-      "SSH_CONNECTION": "10.158.0.2 60304 10.158.4.5 22",
+      "SSH_CLIENT": "10.158.0.2 60316 22",
+      "SSH_CONNECTION": "10.158.0.2 60316 10.158.4.5 22",
       "SSH_TTY": "/dev/pts/0",
       "TERM": "xterm-256color",
       "USER": "root",
       "XDG_RUNTIME_DIR": "/run/user/0",
-      "XDG_SESSION_ID": "3",
+      "XDG_SESSION_ID": "5",
       "_": "/bin/sh"
     },
     "ansible_facts": {
@@ -4461,16 +4621,16 @@
       "date_time": {
         "date": "2020-04-13",
         "day": "13",
-        "epoch": "1586766286",
+        "epoch": "1586766463",
         "hour": "10",
-        "iso8601": "2020-04-13T08:24:46Z",
-        "iso8601_basic": "20200413T102446458355",
-        "iso8601_basic_short": "20200413T102446",
-        "iso8601_micro": "2020-04-13T08:24:46.458543Z",
-        "minute": "24",
+        "iso8601": "2020-04-13T08:27:43Z",
+        "iso8601_basic": "20200413T102743784528",
+        "iso8601_basic_short": "20200413T102743",
+        "iso8601_micro": "2020-04-13T08:27:43.784706Z",
+        "minute": "27",
         "month": "04",
-        "second": "46",
-        "time": "10:24:46",
+        "second": "43",
+        "time": "10:27:43",
         "tz": "CEST",
         "tz_offset": "+0200",
         "weekday": "Monday",
@@ -4813,13 +4973,13 @@
         "PWD": "/root",
         "SHELL": "/bin/bash",
         "SHLVL": "1",
-        "SSH_CLIENT": "10.158.0.2 60304 22",
-        "SSH_CONNECTION": "10.158.0.2 60304 10.158.4.5 22",
+        "SSH_CLIENT": "10.158.0.2 60316 22",
+        "SSH_CONNECTION": "10.158.0.2 60316 10.158.4.5 22",
         "SSH_TTY": "/dev/pts/0",
         "TERM": "xterm-256color",
         "USER": "root",
         "XDG_RUNTIME_DIR": "/run/user/0",
-        "XDG_SESSION_ID": "3",
+        "XDG_SESSION_ID": "5",
         "_": "/bin/sh"
       },
       "fibre_channel_wwn": [],
@@ -4925,16 +5085,16 @@
       },
       "machine": "x86_64",
       "machine_id": "fb4442d4d9b840a4882eb61faac83db9",
-      "memfree_mb": 15436,
+      "memfree_mb": 15159,
       "memory_mb": {
         "nocache": {
-          "free": 15875,
-          "used": 176
+          "free": 15816,
+          "used": 235
         },
         "real": {
-          "free": 15436,
+          "free": 15159,
           "total": 16051,
-          "used": 615
+          "used": 892
         },
         "swap": {
           "cached": 0,
@@ -4947,18 +5107,18 @@
       "module_setup": true,
       "mounts": [
         {
-          "block_available": 1670560,
+          "block_available": 1654614,
           "block_size": 4096,
           "block_total": 2370385,
-          "block_used": 699825,
+          "block_used": 715771,
           "device": "/dev/vda1",
           "fstype": "ext4",
-          "inode_available": 542677,
+          "inode_available": 540032,
           "inode_total": 606208,
-          "inode_used": 63531,
+          "inode_used": 66176,
           "mount": "/",
           "options": "rw,relatime,errors=remount-ro,data=ordered",
-          "size_available": 6842613760,
+          "size_available": 6777298944,
           "size_total": 9709096960,
           "uuid": "2dce42b7-1606-4d91-b6eb-5c83d4df1dd7"
         }
@@ -5074,7 +5234,7 @@
       ],
       "system_capabilities_enforced": "True",
       "system_vendor": "QEMU",
-      "uptime_seconds": 270,
+      "uptime_seconds": 447,
       "user_dir": "/root",
       "user_gecos": "root",
       "user_gid": 0,
@@ -5188,16 +5348,16 @@
     },
     "ansible_machine": "x86_64",
     "ansible_machine_id": "fb4442d4d9b840a4882eb61faac83db9",
-    "ansible_memfree_mb": 15436,
+    "ansible_memfree_mb": 15159,
     "ansible_memory_mb": {
       "nocache": {
-        "free": 15875,
-        "used": 176
+        "free": 15816,
+        "used": 235
       },
       "real": {
-        "free": 15436,
+        "free": 15159,
         "total": 16051,
-        "used": 615
+        "used": 892
       },
       "swap": {
         "cached": 0,
@@ -5209,18 +5369,18 @@
     "ansible_memtotal_mb": 16051,
     "ansible_mounts": [
       {
-        "block_available": 1670560,
+        "block_available": 1654614,
         "block_size": 4096,
         "block_total": 2370385,
-        "block_used": 699825,
+        "block_used": 715771,
         "device": "/dev/vda1",
         "fstype": "ext4",
-        "inode_available": 542677,
+        "inode_available": 540032,
         "inode_total": 606208,
-        "inode_used": 63531,
+        "inode_used": 66176,
         "mount": "/",
         "options": "rw,relatime,errors=remount-ro,data=ordered",
-        "size_available": 6842613760,
+        "size_available": 6777298944,
         "size_total": 9709096960,
         "uuid": "2dce42b7-1606-4d91-b6eb-5c83d4df1dd7"
       }
@@ -5340,7 +5500,7 @@
     ],
     "ansible_system_capabilities_enforced": "True",
     "ansible_system_vendor": "QEMU",
-    "ansible_uptime_seconds": 270,
+    "ansible_uptime_seconds": 447,
     "ansible_user_dir": "/root",
     "ansible_user_gecos": "root",
     "ansible_user_gid": 0,
@@ -5361,11 +5521,11 @@
       "all"
     ],
     "group_names": [
-      "253cfbcda2f340668a316791bcd1d5c1",
+      "2af6a8d684894c3fb3d27ee3b3140afe",
       "clusterparapluie"
     ],
     "groups": {
-      "253cfbcda2f340668a316791bcd1d5c1": [
+      "2af6a8d684894c3fb3d27ee3b3140afe": [
         "virtual-158-4-2",
         "virtual-158-4-3",
         "virtual-158-4-4",
@@ -5396,7 +5556,7 @@
     "inventory_hostname": "virtual-158-4-5",
     "inventory_hostname_short": "virtual-158-4-5",
     "module_setup": true,
-    "omit": "__omit_place_holder__f86de38cdd5a8f119199365072680fc540529062",
+    "omit": "__omit_place_holder__2d54419b2b8458ac206285f2c65761455004e940",
     "playbook_dir": "/root/venv/lib/python3.8/site-packages/enoslib/ansible"
   }
 ,"virtual-158-4-6": 
@@ -5425,16 +5585,16 @@
     "ansible_date_time": {
       "date": "2020-04-13",
       "day": "13",
-      "epoch": "1586766286",
+      "epoch": "1586766463",
       "hour": "10",
-      "iso8601": "2020-04-13T08:24:46Z",
-      "iso8601_basic": "20200413T102446453151",
-      "iso8601_basic_short": "20200413T102446",
-      "iso8601_micro": "2020-04-13T08:24:46.453323Z",
-      "minute": "24",
+      "iso8601": "2020-04-13T08:27:43Z",
+      "iso8601_basic": "20200413T102743829833",
+      "iso8601_basic_short": "20200413T102743",
+      "iso8601_micro": "2020-04-13T08:27:43.830039Z",
+      "minute": "27",
       "month": "04",
-      "second": "46",
-      "time": "10:24:46",
+      "second": "43",
+      "time": "10:27:43",
       "tz": "CEST",
       "tz_offset": "+0200",
       "weekday": "Monday",
@@ -5776,13 +5936,13 @@
       "PWD": "/root",
       "SHELL": "/bin/bash",
       "SHLVL": "1",
-      "SSH_CLIENT": "10.158.0.2 39964 22",
-      "SSH_CONNECTION": "10.158.0.2 39964 10.158.4.6 22",
+      "SSH_CLIENT": "10.158.0.2 39976 22",
+      "SSH_CONNECTION": "10.158.0.2 39976 10.158.4.6 22",
       "SSH_TTY": "/dev/pts/0",
       "TERM": "xterm-256color",
       "USER": "root",
       "XDG_RUNTIME_DIR": "/run/user/0",
-      "XDG_SESSION_ID": "3",
+      "XDG_SESSION_ID": "5",
       "_": "/bin/sh"
     },
     "ansible_facts": {
@@ -5811,16 +5971,16 @@
       "date_time": {
         "date": "2020-04-13",
         "day": "13",
-        "epoch": "1586766286",
+        "epoch": "1586766463",
         "hour": "10",
-        "iso8601": "2020-04-13T08:24:46Z",
-        "iso8601_basic": "20200413T102446453151",
-        "iso8601_basic_short": "20200413T102446",
-        "iso8601_micro": "2020-04-13T08:24:46.453323Z",
-        "minute": "24",
+        "iso8601": "2020-04-13T08:27:43Z",
+        "iso8601_basic": "20200413T102743829833",
+        "iso8601_basic_short": "20200413T102743",
+        "iso8601_micro": "2020-04-13T08:27:43.830039Z",
+        "minute": "27",
         "month": "04",
-        "second": "46",
-        "time": "10:24:46",
+        "second": "43",
+        "time": "10:27:43",
         "tz": "CEST",
         "tz_offset": "+0200",
         "weekday": "Monday",
@@ -6163,13 +6323,13 @@
         "PWD": "/root",
         "SHELL": "/bin/bash",
         "SHLVL": "1",
-        "SSH_CLIENT": "10.158.0.2 39964 22",
-        "SSH_CONNECTION": "10.158.0.2 39964 10.158.4.6 22",
+        "SSH_CLIENT": "10.158.0.2 39976 22",
+        "SSH_CONNECTION": "10.158.0.2 39976 10.158.4.6 22",
         "SSH_TTY": "/dev/pts/0",
         "TERM": "xterm-256color",
         "USER": "root",
         "XDG_RUNTIME_DIR": "/run/user/0",
-        "XDG_SESSION_ID": "3",
+        "XDG_SESSION_ID": "5",
         "_": "/bin/sh"
       },
       "fibre_channel_wwn": [],
@@ -6275,16 +6435,16 @@
       },
       "machine": "x86_64",
       "machine_id": "fb4442d4d9b840a4882eb61faac83db9",
-      "memfree_mb": 15435,
+      "memfree_mb": 15161,
       "memory_mb": {
         "nocache": {
-          "free": 15875,
-          "used": 176
+          "free": 15817,
+          "used": 234
         },
         "real": {
-          "free": 15435,
+          "free": 15161,
           "total": 16051,
-          "used": 616
+          "used": 890
         },
         "swap": {
           "cached": 0,
@@ -6297,18 +6457,18 @@
       "module_setup": true,
       "mounts": [
         {
-          "block_available": 1670560,
+          "block_available": 1655461,
           "block_size": 4096,
           "block_total": 2370385,
-          "block_used": 699825,
+          "block_used": 714924,
           "device": "/dev/vda1",
           "fstype": "ext4",
-          "inode_available": 542677,
+          "inode_available": 540453,
           "inode_total": 606208,
-          "inode_used": 63531,
+          "inode_used": 65755,
           "mount": "/",
           "options": "rw,relatime,errors=remount-ro,data=ordered",
-          "size_available": 6842613760,
+          "size_available": 6780768256,
           "size_total": 9709096960,
           "uuid": "2dce42b7-1606-4d91-b6eb-5c83d4df1dd7"
         }
@@ -6424,7 +6584,7 @@
       ],
       "system_capabilities_enforced": "True",
       "system_vendor": "QEMU",
-      "uptime_seconds": 267,
+      "uptime_seconds": 444,
       "user_dir": "/root",
       "user_gecos": "root",
       "user_gid": 0,
@@ -6538,16 +6698,16 @@
     },
     "ansible_machine": "x86_64",
     "ansible_machine_id": "fb4442d4d9b840a4882eb61faac83db9",
-    "ansible_memfree_mb": 15435,
+    "ansible_memfree_mb": 15161,
     "ansible_memory_mb": {
       "nocache": {
-        "free": 15875,
-        "used": 176
+        "free": 15817,
+        "used": 234
       },
       "real": {
-        "free": 15435,
+        "free": 15161,
         "total": 16051,
-        "used": 616
+        "used": 890
       },
       "swap": {
         "cached": 0,
@@ -6559,18 +6719,18 @@
     "ansible_memtotal_mb": 16051,
     "ansible_mounts": [
       {
-        "block_available": 1670560,
+        "block_available": 1655461,
         "block_size": 4096,
         "block_total": 2370385,
-        "block_used": 699825,
+        "block_used": 714924,
         "device": "/dev/vda1",
         "fstype": "ext4",
-        "inode_available": 542677,
+        "inode_available": 540453,
         "inode_total": 606208,
-        "inode_used": 63531,
+        "inode_used": 65755,
         "mount": "/",
         "options": "rw,relatime,errors=remount-ro,data=ordered",
-        "size_available": 6842613760,
+        "size_available": 6780768256,
         "size_total": 9709096960,
         "uuid": "2dce42b7-1606-4d91-b6eb-5c83d4df1dd7"
       }
@@ -6690,7 +6850,7 @@
     ],
     "ansible_system_capabilities_enforced": "True",
     "ansible_system_vendor": "QEMU",
-    "ansible_uptime_seconds": 267,
+    "ansible_uptime_seconds": 444,
     "ansible_user_dir": "/root",
     "ansible_user_gecos": "root",
     "ansible_user_gid": 0,
@@ -6711,11 +6871,11 @@
       "all"
     ],
     "group_names": [
-      "253cfbcda2f340668a316791bcd1d5c1",
+      "2af6a8d684894c3fb3d27ee3b3140afe",
       "clusterparapluie"
     ],
     "groups": {
-      "253cfbcda2f340668a316791bcd1d5c1": [
+      "2af6a8d684894c3fb3d27ee3b3140afe": [
         "virtual-158-4-2",
         "virtual-158-4-3",
         "virtual-158-4-4",
@@ -6746,7 +6906,7 @@
     "inventory_hostname": "virtual-158-4-6",
     "inventory_hostname_short": "virtual-158-4-6",
     "module_setup": true,
-    "omit": "__omit_place_holder__f86de38cdd5a8f119199365072680fc540529062",
+    "omit": "__omit_place_holder__2d54419b2b8458ac206285f2c65761455004e940",
     "playbook_dir": "/root/venv/lib/python3.8/site-packages/enoslib/ansible"
   }
 ,"virtual-158-4-7": 
@@ -6775,16 +6935,16 @@
     "ansible_date_time": {
       "date": "2020-04-13",
       "day": "13",
-      "epoch": "1586766286",
+      "epoch": "1586766463",
       "hour": "10",
-      "iso8601": "2020-04-13T08:24:46Z",
-      "iso8601_basic": "20200413T102446465609",
-      "iso8601_basic_short": "20200413T102446",
-      "iso8601_micro": "2020-04-13T08:24:46.465782Z",
-      "minute": "24",
+      "iso8601": "2020-04-13T08:27:43Z",
+      "iso8601_basic": "20200413T102743923643",
+      "iso8601_basic_short": "20200413T102743",
+      "iso8601_micro": "2020-04-13T08:27:43.923829Z",
+      "minute": "27",
       "month": "04",
-      "second": "46",
-      "time": "10:24:46",
+      "second": "43",
+      "time": "10:27:43",
       "tz": "CEST",
       "tz_offset": "+0200",
       "weekday": "Monday",
@@ -7126,13 +7286,13 @@
       "PWD": "/root",
       "SHELL": "/bin/bash",
       "SHLVL": "1",
-      "SSH_CLIENT": "10.158.0.2 43028 22",
-      "SSH_CONNECTION": "10.158.0.2 43028 10.158.4.7 22",
+      "SSH_CLIENT": "10.158.0.2 43040 22",
+      "SSH_CONNECTION": "10.158.0.2 43040 10.158.4.7 22",
       "SSH_TTY": "/dev/pts/0",
       "TERM": "xterm-256color",
       "USER": "root",
       "XDG_RUNTIME_DIR": "/run/user/0",
-      "XDG_SESSION_ID": "3",
+      "XDG_SESSION_ID": "5",
       "_": "/bin/sh"
     },
     "ansible_facts": {
@@ -7161,16 +7321,16 @@
       "date_time": {
         "date": "2020-04-13",
         "day": "13",
-        "epoch": "1586766286",
+        "epoch": "1586766463",
         "hour": "10",
-        "iso8601": "2020-04-13T08:24:46Z",
-        "iso8601_basic": "20200413T102446465609",
-        "iso8601_basic_short": "20200413T102446",
-        "iso8601_micro": "2020-04-13T08:24:46.465782Z",
-        "minute": "24",
+        "iso8601": "2020-04-13T08:27:43Z",
+        "iso8601_basic": "20200413T102743923643",
+        "iso8601_basic_short": "20200413T102743",
+        "iso8601_micro": "2020-04-13T08:27:43.923829Z",
+        "minute": "27",
         "month": "04",
-        "second": "46",
-        "time": "10:24:46",
+        "second": "43",
+        "time": "10:27:43",
         "tz": "CEST",
         "tz_offset": "+0200",
         "weekday": "Monday",
@@ -7513,13 +7673,13 @@
         "PWD": "/root",
         "SHELL": "/bin/bash",
         "SHLVL": "1",
-        "SSH_CLIENT": "10.158.0.2 43028 22",
-        "SSH_CONNECTION": "10.158.0.2 43028 10.158.4.7 22",
+        "SSH_CLIENT": "10.158.0.2 43040 22",
+        "SSH_CONNECTION": "10.158.0.2 43040 10.158.4.7 22",
         "SSH_TTY": "/dev/pts/0",
         "TERM": "xterm-256color",
         "USER": "root",
         "XDG_RUNTIME_DIR": "/run/user/0",
-        "XDG_SESSION_ID": "3",
+        "XDG_SESSION_ID": "5",
         "_": "/bin/sh"
       },
       "fibre_channel_wwn": [],
@@ -7625,16 +7785,16 @@
       },
       "machine": "x86_64",
       "machine_id": "fb4442d4d9b840a4882eb61faac83db9",
-      "memfree_mb": 15436,
+      "memfree_mb": 15162,
       "memory_mb": {
         "nocache": {
-          "free": 15875,
-          "used": 176
+          "free": 15818,
+          "used": 233
         },
         "real": {
-          "free": 15436,
+          "free": 15162,
           "total": 16051,
-          "used": 615
+          "used": 889
         },
         "swap": {
           "cached": 0,
@@ -7647,18 +7807,18 @@
       "module_setup": true,
       "mounts": [
         {
-          "block_available": 1670560,
+          "block_available": 1655456,
           "block_size": 4096,
           "block_total": 2370385,
-          "block_used": 699825,
+          "block_used": 714929,
           "device": "/dev/vda1",
           "fstype": "ext4",
-          "inode_available": 542677,
+          "inode_available": 540449,
           "inode_total": 606208,
-          "inode_used": 63531,
+          "inode_used": 65759,
           "mount": "/",
           "options": "rw,relatime,errors=remount-ro,data=ordered",
-          "size_available": 6842613760,
+          "size_available": 6780747776,
           "size_total": 9709096960,
           "uuid": "2dce42b7-1606-4d91-b6eb-5c83d4df1dd7"
         }
@@ -7774,7 +7934,7 @@
       ],
       "system_capabilities_enforced": "True",
       "system_vendor": "QEMU",
-      "uptime_seconds": 264,
+      "uptime_seconds": 441,
       "user_dir": "/root",
       "user_gecos": "root",
       "user_gid": 0,
@@ -7888,16 +8048,16 @@
     },
     "ansible_machine": "x86_64",
     "ansible_machine_id": "fb4442d4d9b840a4882eb61faac83db9",
-    "ansible_memfree_mb": 15436,
+    "ansible_memfree_mb": 15162,
     "ansible_memory_mb": {
       "nocache": {
-        "free": 15875,
-        "used": 176
+        "free": 15818,
+        "used": 233
       },
       "real": {
-        "free": 15436,
+        "free": 15162,
         "total": 16051,
-        "used": 615
+        "used": 889
       },
       "swap": {
         "cached": 0,
@@ -7909,18 +8069,18 @@
     "ansible_memtotal_mb": 16051,
     "ansible_mounts": [
       {
-        "block_available": 1670560,
+        "block_available": 1655456,
         "block_size": 4096,
         "block_total": 2370385,
-        "block_used": 699825,
+        "block_used": 714929,
         "device": "/dev/vda1",
         "fstype": "ext4",
-        "inode_available": 542677,
+        "inode_available": 540449,
         "inode_total": 606208,
-        "inode_used": 63531,
+        "inode_used": 65759,
         "mount": "/",
         "options": "rw,relatime,errors=remount-ro,data=ordered",
-        "size_available": 6842613760,
+        "size_available": 6780747776,
         "size_total": 9709096960,
         "uuid": "2dce42b7-1606-4d91-b6eb-5c83d4df1dd7"
       }
@@ -8040,7 +8200,7 @@
     ],
     "ansible_system_capabilities_enforced": "True",
     "ansible_system_vendor": "QEMU",
-    "ansible_uptime_seconds": 264,
+    "ansible_uptime_seconds": 441,
     "ansible_user_dir": "/root",
     "ansible_user_gecos": "root",
     "ansible_user_gid": 0,
@@ -8061,11 +8221,11 @@
       "all"
     ],
     "group_names": [
-      "253cfbcda2f340668a316791bcd1d5c1",
+      "2af6a8d684894c3fb3d27ee3b3140afe",
       "clusterparapluie"
     ],
     "groups": {
-      "253cfbcda2f340668a316791bcd1d5c1": [
+      "2af6a8d684894c3fb3d27ee3b3140afe": [
         "virtual-158-4-2",
         "virtual-158-4-3",
         "virtual-158-4-4",
@@ -8096,7 +8256,7 @@
     "inventory_hostname": "virtual-158-4-7",
     "inventory_hostname_short": "virtual-158-4-7",
     "module_setup": true,
-    "omit": "__omit_place_holder__f86de38cdd5a8f119199365072680fc540529062",
+    "omit": "__omit_place_holder__2d54419b2b8458ac206285f2c65761455004e940",
     "playbook_dir": "/root/venv/lib/python3.8/site-packages/enoslib/ansible"
   }
 }
