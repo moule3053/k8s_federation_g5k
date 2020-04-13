@@ -8,13 +8,13 @@ import time
 
 name = "g5k-federation-1"
 
-clusters = ["econome", "chiclet", "dahu", "petitprince"]
+clusters = ["parapluie", "parapluie","econome", "chiclet", "dahu", "petitprince"]
 
 logging.basicConfig(level=logging.DEBUG)
 
 master_nodes = []
 
-duration = "02:00:00"
+duration = "08:00:00"
 
 
 for i in range(0, len(clusters)):
@@ -58,5 +58,6 @@ print("master nodes ........")
 print(master_nodes)
 
 # Modify k8s conctext configurations to give them unique names
-subprocess.check_call("./modify_kube_config.sh %s %s %s %s" % (str(master_nodes[0]), str(master_nodes[1]), str(master_nodes[2]),str(master_nodes[3])), shell=True)
+#subprocess.check_call("./modify_kube_config.sh %s %s %s %s " % (master_nodes[0]), str(master_nodes[1]), str(master_nodes[2]),str(master_nodes[3])), shell=True)
+subprocess.check_call("./modify_kube_config.sh " % (master_nodes), shell=True)
 run_ansible(["kubefed_init.yml"], inventory_path="kubefed_inventory_cluster0.ini")
