@@ -4,13 +4,10 @@
     - name: Copy kubefed init script
       copy:
         src: kubefed_init.sh
-        dest: /home/mulugeta/kubefed_init.sh
-        owner: mulugeta
-        group: mulugeta
+        dest: /home/root/kubefed_init.sh
         mode: '0644'
 - hosts: all[0]
   become: yes
-  become_user: mulugeta
   tasks:
     - name: Initialize the federation
-      shell: cd /home/mulugeta && chmod +x kubefed_init.sh && ./kubefed_init.sh
+      shell: cd /home/root && chmod +x kubefed_init.sh && ./kubefed_init.sh

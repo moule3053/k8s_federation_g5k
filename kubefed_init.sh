@@ -8,29 +8,22 @@ kubectl config rename-context k8s-admin-cluster$i@kubernetes cluster$i
 done
 
 # Install helm3
-wget https://get.helm.sh/helm-v3.0.2-linux-amd64.tar.gz
-sleep 5
-wget https://get.helm.sh/helm-v3.0.2-linux-amd64.tar.gz
-sleep 5
-wget https://get.helm.sh/helm-v3.0.2-linux-amd64.tar.gz
+wget --tries=0 https://get.helm.sh/helm-v3.0.2-linux-amd64.tar.gz
 tar xzvf helm-v3.0.2-linux-amd64.tar.gz
-sudo mv linux-amd64/helm /usr/local/bin/
+mv linux-amd64/helm /usr/local/bin/
 helm repo add stable https://kubernetes-charts.storage.googleapis.com/
 helm repo update
 
 # Deploy Prometheus
 for i in {0..5}
 do
-#kubectl config use-context cluster$i && kubectl create ns monitoring && helm install stable/prometheus-operator --generate-name --set grafana.service.type=NodePort --set prometheus.service.type=NodePort --namespace monitoring && kubectl config use-context cluster0
 kubectl config use-context cluster$i; kubectl create ns monitoring; helm install stable/prometheus-operator --generate-name --set grafana.service.type=NodePort --set prometheus.service.type=NodePort --set prometheus.prometheusSpec.scrapeInterval="5s" --namespace monitoring; kubectl config use-context cluster0
 done
 
 #Install helm2
-wget https://get.helm.sh/helm-v2.16.1-linux-amd64.tar.gz
-sleep 5
-wget https://get.helm.sh/helm-v2.16.1-linux-amd64.tar.gz
+wget --tries=0 https://get.helm.sh/helm-v2.16.1-linux-amd64.tar.gz
 tar xzvf helm-v2.16.1-linux-amd64.tar.gz
-sudo mv linux-amd64/helm /usr/local/bin/helm2
+mv linux-amd64/helm /usr/local/bin/helm2
 
 kubectl config use-context cluster0
 cat << EOF | kubectl apply -f -
@@ -57,11 +50,9 @@ EOF
 helm2 init --service-account tiller
 
 # Install kubefedctl
-wget https://github.com/kubernetes-sigs/kubefed/releases/download/v0.1.0-rc6/kubefedctl-0.1.0-rc6-linux-amd64.tgz
-sleep 5
-wget https://github.com/kubernetes-sigs/kubefed/releases/download/v0.1.0-rc6/kubefedctl-0.1.0-rc6-linux-amd64.tgz
+wget --tries=0 https://github.com/kubernetes-sigs/kubefed/releases/download/v0.1.0-rc6/kubefedctl-0.1.0-rc6-linux-amd64.tgz
 tar xzvf kubefedctl-0.1.0-rc6-linux-amd64.tgz
-sudo mv kubefedctl /usr/local/bin/
+mv kubefedctl /usr/local/bin/
 
 # Add helm chart
 sleep 30
@@ -78,11 +69,4 @@ do
 kubefedctl join cluster$i --cluster-context cluster$i --host-cluster-context cluster0 --v=2
 done
 
-# Download and Install golang
-wget https://dl.google.com/go/go1.13.8.linux-amd64.tar.gz
-sudo tar -C /usr/local -xzf go1.13.8.linux-amd64.tar.gz
-echo "export PATH=$PATH:/usr/local/go/bin" >> $HOME/.profile
-source $HOME/.profile
-
-# Download and install syx
-go get -v -u github.com/go-pluto/styx
+echo "DONE. Kubernetes Federation is setup."

@@ -11,17 +11,8 @@
     command: swapoff -a
     when: ansible_swaptotal_mb > 0
 
-  - name: create the 'mulugeta' user
-    user: name=mulugeta append=yes state=present createhome=yes shell=/bin/bash
-
-  - name: allow 'mulugeta' to have passwordless sudo
-    lineinfile:
-      dest: /etc/sudoers
-      line: 'mulugeta ALL=(ALL) NOPASSWD: ALL'
-      validate: 'visudo -cf %s'
-
-  - name: set up authorized keys for the mulugeta user
-    authorized_key: user=mulugeta key="{{item}}"
+  - name: set up authorized keys for root user
+    authorized_key: user=root key="{{item}}"
     with_file:
       - ~/.ssh/id_rsa.pub
 
@@ -86,3 +77,53 @@
     apt:
      name: kubeadm=1.14.0-00
      state: present
+- hosts: all[0]
+  become: yes
+  tasks:
+   - name: install kubectl
+     apt:
+       name: kubectl=1.14.0-00
+       state: present
+       force: yes
+
+- hosts: all[0]
+  become: yes
+  tasks:
+    - name: initialize the cluster
+      shell: kubeadm init --pod-network-cidr=10.244.0.0/16
+
+    - name: create .kube directory
+      become: yes
+      file:
+        path: $HOME/.kube
+        state: directory
+        mode: 0755
+
+    - name: copy admin.conf to user's kube config
+      copy:
+        src: /etc/kubernetes/admin.conf
+        dest: /home/root/.kube/config
+        remote_src: yes
+        owner: root
+
+    - name: install Pod network
+      become: yes
+      shell: kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/2140ac876ef134e0ed5af15c65e414cf26827915/Documentation/kube-flannel.yml
+
+- hosts: all[0]
+  become: yes
+  gather_facts: false
+  tasks:
+    - name: get join command
+      shell: kubeadm token create --print-join-command
+      register: join_command_raw
+
+    - name: set join command
+      set_fact:
+        join_command: "{{ join_command_raw.stdout_lines[0] }}"
+
+- hosts: all[1:]
+  become: yes
+  tasks:
+    - name: join cluster
+      shell: "{{ hostvars[groups['all'][0]].join_command }}"
