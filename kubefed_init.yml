@@ -4,10 +4,10 @@
     - name: Copy kubefed init script
       copy:
         src: kubefed_init.sh
-        dest: /home/root/kubefed_init.sh
+        dest: /root/kubefed_init.sh
         mode: '0644'
 - hosts: all[0]
   become: yes
   tasks:
     - name: Initialize the federation
-      shell: cd /home/root && chmod +x kubefed_init.sh && ./kubefed_init.sh
+      shell: cd /root/ && chmod +x kubefed_init.sh && ./kubefed_init.sh
